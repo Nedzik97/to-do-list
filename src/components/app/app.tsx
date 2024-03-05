@@ -1,11 +1,19 @@
+import { TaskForm } from '../create-task-form/task-form';
+import { TaskList } from '../task-list/task-list';
 import styles from './app.module.scss'
 
-function App() {
+export const filters = {
+  all: 'all',
+  completed: 'completed',
+  active: 'active',
+}
+
+export const App = () => {
   return (
-    <div className={styles.app}>
-     New Project
+    <div className={styles.App}>
+			<h1 className={styles.pageTitle}>To Do list</h1>
+			<TaskForm />
+			<TaskList/>
     </div>
   );
 }
-
-export default App;

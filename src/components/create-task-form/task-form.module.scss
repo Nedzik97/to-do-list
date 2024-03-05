@@ -1,0 +1,25 @@
+.inputWrapper {
+	display: flex;
+	justify-content: center;
+}
+
+.inputAddTask {
+	width: 700px;
+	height: 40px;
+	background-color: transparent;
+	border: 1px solid #fff;
+	color: #fff;
+	font-size: 20px;
+}
+
+.buttonCreateTask {
+	margin-left: 20px;
+	width: 120px;
+	font-size: 17px;
+	font-weight: 600;
+	letter-spacing: 2px;
+	color: #fff;
+	border: none;
+	background: linear-gradient(120deg, #00ff89,#1e00ff);
+	cursor: pointer;
+}
