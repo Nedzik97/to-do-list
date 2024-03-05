@@ -4,7 +4,6 @@ import { TaskList} from '../../types/type';
 
 const initialState: TaskList = {
   taskList: [],
-	selectedTask: '',
   filterValue: 'all',
 };
 
@@ -17,16 +16,18 @@ export const tasksSlice = createSlice({
 				id: new Date().toISOString(),
   			title: action.payload,
   			isComplete: false,
+				isEditTask: false
 			}
 			state.taskList.push(newTask);
 		},
-		removeCard(state, action: PayloadAction<string>) {
+		deleteTask(state, action: PayloadAction<string>) {
 			state.taskList = state.taskList.filter(task => task.id !== action.payload);
 		},
-		editTaskName(state, action: PayloadAction<{ id: string, newTitle: string }>) {
-      const taskToEdit = state.taskList.find(task => task.id === action.payload.id);
-      if (taskToEdit) {
-        taskToEdit.title = action.payload.newTitle;
+		editTaskTitle(state, action: PayloadAction<{ id: string, newTitle: string }>) {
+			const {id, newTitle} = action.payload;
+      const editableTask = state.taskList.find(task => task.id === id);
+      if (editableTask) {
+        editableTask.title = newTitle;
       }
     },
     setFilterValue(state, action: PayloadAction<string>) {
@@ -35,4 +36,4 @@ export const tasksSlice = createSlice({
   },
 });
 
-export const { addTask, removeCard, setFilterValue } = tasksSlice.actions;
+export const { addTask, deleteTask, setFilterValue } = tasksSlice.actions;

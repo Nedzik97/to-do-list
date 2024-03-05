@@ -1,4 +1,4 @@
-import { TaskForm } from '../create-task-form/task-form';
+import { TaskForm } from '../task-form/task-form';
 import { TaskList } from '../task-list/task-list';
 import styles from './app.module.scss'
 

@@ -23,6 +23,7 @@ export const TaskForm = (): JSX.Element => {
             value={formValue}
             onChange={(e) => setFormValue(e.target.value)}
             className={styles.inputAddTask}
+						required
           />
           <button className={styles.buttonCreateTask}>Add Task</button>
         </form>

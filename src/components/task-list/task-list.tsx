@@ -1,15 +1,16 @@
-import { useSelector } from 'react-redux';
-import cx from 'classnames'
+import { useSelector} from 'react-redux';
 import { CSSTransition, TransitionGroup } from 'react-transition-group'
-import { getTasksList } from '../../store/tasks/selectors';
+import { getTasksList} from '../../store/tasks/selectors';
+import { TaskItem } from '../task/task';
 
-import styles from './task-list.module.scss'
+import styles from "./task-list.module.scss";
 
 export const TaskList = () => {
 	const taskList = useSelector(getTasksList)
 
   return (
     <>
+		{taskList.length > 0 ?
       <TransitionGroup>
         {taskList.map((task, index) => {
           return (
@@ -23,32 +24,12 @@ export const TaskList = () => {
                 exitActive: styles.taskExitActive,
               }}
             >
-              <div className={styles.taskWrapper} key={task.id}>
-                <div className={task.isComplete ? styles.done : ''}>
-                  <span className={styles.taskNumber}>{index + 1}</span>
-                  <span className={styles.taskText}>{task.title}</span>
-                </div>
-                <div className={styles.buttonWraper}>
-                  {task.isComplete ? null : (
-                    <button
-                      className={cx(styles.button, styles.buttonEditTask)}
-                    
-                    >
-                      Edit
-                    </button>
-                  )}
-                  <button
-                    className={cx(styles.button, styles.buttonDeleteTask)}
-                  
-                  >
-                    Delete
-                  </button>
-                </div>
-              </div>
-            </CSSTransition>
+             <TaskItem  task={task} index={index}/>
+            </CSSTransition >
           )
         })}
       </TransitionGroup>
+			 : 'Not found task'}
     </>
   )
 }
