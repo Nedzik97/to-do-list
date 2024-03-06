@@ -1,11 +1,10 @@
 export type  Task = {
-  id: string;
-  title: string;
-  isComplete: boolean;
-	isEditTask: boolean;
+  id: string
+  title: string
+  isComplete: boolean
 }
 
 export type TaskList = {
-  taskList: Task[];
-  filterValue: string;
+  taskList: Task[]
+  filteredList: string
 }

@@ -6,7 +6,8 @@
 .taskEnterActive {
 	transform: translateX(0);
 	opacity: 1;
-	transition: all 800ms;
+	transition-property: transform, opacity;
+	transition-duration: 800ms;
 }
 
 .taskExit {
@@ -17,5 +18,6 @@
 .taskExitActive {
 	transform: translateX(100px);
 	opacity: 0;
-	transition: all 800ms;
+	transition-property: transform, opacity;
+	transition-duration: 800ms;
 }

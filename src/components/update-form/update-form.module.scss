@@ -1,12 +1,12 @@
-.editInputWrapper {
+$button-font-size: 12px;
+$red-color: rgb(214, 34, 34);
+$edit-input-font-size: 20px;
 
+.updateFormWrapper {
+	display: flex;
 }
 
 .buttonUpdateTask {
-	&:hover {
-		background: #0162c8;
-		color: #fff;
-	}
 	position: relative;
 	display: inline-block;
 	padding: 6px 16px;
@@ -14,18 +14,19 @@
 	border-radius: 40px;
 	text-transform: uppercase;
 	text-decoration: none;
-	font-size: 12px;
+	font-size: $button-font-size;
 	font-weight: 800;
 	cursor: pointer;
 	border: none;
-	color: #0162c8;
+	color: rgb(1, 98, 200);
+
+	&:hover {
+		background: rgb(1, 98, 200);
+		color: rgb(255, 255, 255);
+	}
 }
 
 .buttonUndoEdit {
-	&:hover {
-		background: red;
-		color: #fff;
-	}
 	position: relative;
 	display: inline-block;
 	padding: 6px 16px;
@@ -33,24 +34,28 @@
 	border-radius: 40px;
 	text-transform: uppercase;
 	text-decoration: none;
-	font-size: 12px;
+	font-size: $button-font-size;
 	font-weight: 800;
 	cursor: pointer;
 	border: none;
-	color: red
-}
+	color: $red-color;
 
+	&:hover {
+		background: $red-color;
+		color: rgb(255, 255, 255);
+	}
+}
 
 .editInput {
 	width: 770px;
 	height: 40px;
 	background-color: transparent;
-	border: 1px solid #fff;
-	color: #fff;
-	font-size: 20px;
+	border: 1px solid rgb(255, 255, 255);
+	color: rgb(255, 255, 255);
+	font-size: $edit-input-font-size;
 }
 
 .editButtonWrapper {
-	margin-left: 20px;
+	margin-left: 50px;
 }
 

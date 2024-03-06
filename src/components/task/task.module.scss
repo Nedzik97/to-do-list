@@ -1,35 +1,38 @@
+$button-font-size: 12px;
+$task-wrapper-font-size: 22px;
+
 .taskWrapper {
 	display: flex;
 	margin: 0 auto;
 	width: 70%;
-  background-color: #555;
+  background-color: rgb(85, 85, 85);
   border-radius: 6px;
   margin-bottom: 20px;
   padding: 10px 140px 10px 15px;
   text-align: left;
-  font-size: 22px;
+  font-size: $task-wrapper-font-size;
   position: relative;
 	cursor: pointer;
+	
+	 > div {
+    display: flex;
+    align-items: center;
+  }
 }
 
-.taskWrapper div {
-  display: flex;
-  align-items: center;
-}
 
 .taskNumber {
-  color: #fff;
-	border: 1px solid #C0C0C0;
+  color: rgb(255, 255, 255);
+	border: 1px solid rgb(192, 192, 192);
   border-radius: 50%;
   width: 26px;
   height: 26px;
   display: flex;
   text-align: center;
-  font-size: 14px;
   margin-right: 8px;
   align-items: center;
   justify-content: center;
-	background-color: #555;
+	background-color: rgb(85, 85, 85);
 	font-weight: 600;
 }
 
@@ -64,21 +67,21 @@
 	border-radius: 40px;
 	text-transform: uppercase;
 	text-decoration: none;
-	font-size: 12px;
+	font-size: $button-font-size;
 	font-weight: 600;
 	cursor: pointer;
 	border: none;
-	color: #fff;
-}	
+	color: rgb(255, 255, 255);
+}
 
 .buttonCompleteTask {
-	background: linear-gradient(90deg, #80ff00c3, #4a7222 );
+	background: linear-gradient(90deg, rgba(128, 255, 0, 0.7), rgb(74, 114, 34) );
 }
 
 .buttonEditTask {
-	background: linear-gradient(90deg, #FFD700, #865d12 );
+	background: linear-gradient(90deg, rgb(255, 215, 0), rgb(134, 93, 18) );
 }
 
 .buttonDeleteTask {
-	background: linear-gradient(90deg, #f00c3a, #822134 );
+	background: linear-gradient(90deg, rgb(240, 12, 58), rgb(130, 33, 52) );
 }
