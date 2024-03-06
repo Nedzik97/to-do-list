@@ -3,7 +3,7 @@ import { TaskList} from '../../types/type'
 
 const initialState: TaskList = {
   taskList: [],
-  filteredList: 'all',
+  filter: 'all',
 }
 
 export const tasksSlice = createSlice({
@@ -38,7 +38,7 @@ export const tasksSlice = createSlice({
     },
     setFilteredList(state, action: PayloadAction<string>) {
       console.log("payload", action.payload)
-      state.filteredList = action.payload
+      state.filter = action.payload
     },
   },
 })

@@ -1,7 +1,7 @@
 import { useDispatch , useSelector } from 'react-redux'
 import { setFilteredList } from '../../store/tasks/tasksSlice'
 
-import { getFilteredList } from '../../store/tasks/selectors'
+import { getFilteredList, getTasksList} from '../../store/tasks/selectors'
 import { filters } from '../../utils'
 
 import styles from './task-filter.module.scss'
@@ -9,9 +9,21 @@ import styles from './task-filter.module.scss'
 export const FilterButtons = (): JSX.Element => {
   const dispatch = useDispatch()
   const filteredTasks = useSelector(getFilteredList)
+  const taskList = useSelector(getTasksList)
 
   const handleFilteredList = (currentList: string): void => {
     dispatch(setFilteredList(currentList))
+  }
+
+  const countTasks = (type: string): number => {
+    switch (type) {
+      case filters.completed:
+        return taskList.filter(task => task.isComplete).length
+      case filters.active:
+        return taskList.filter(task => !task.isComplete).length
+      default:
+        return filteredTasks.length
+    }
   }
 
   return (
@@ -30,7 +42,7 @@ export const FilterButtons = (): JSX.Element => {
         }`}
         onClick={():void => handleFilteredList(filters.completed)}
       >
-        Completed
+        Completed {countTasks(filters.completed)}
       </button>
       <button
         className={`${styles.filterButton} ${
@@ -38,7 +50,7 @@ export const FilterButtons = (): JSX.Element => {
         }`}
         onClick={():void => handleFilteredList(filters.active)}
       >
-        Active
+        Active {countTasks(filters.active)}
       </button>
     </div>
   )

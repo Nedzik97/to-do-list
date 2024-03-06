@@ -12,7 +12,6 @@ $task-wrapper-font-size: 22px;
   text-align: left;
   font-size: $task-wrapper-font-size;
   position: relative;
-	cursor: pointer;
 	
 	 > div {
     display: flex;
@@ -20,6 +19,9 @@ $task-wrapper-font-size: 22px;
   }
 }
 
+.taskText {
+	cursor: pointer;
+}
 
 .taskNumber {
   color: rgb(255, 255, 255);
@@ -34,6 +36,7 @@ $task-wrapper-font-size: 22px;
   justify-content: center;
 	background-color: rgb(85, 85, 85);
 	font-weight: 600;
+	cursor: pointer;
 }
 
 .taskBg .taskText {
@@ -44,6 +47,7 @@ $task-wrapper-font-size: 22px;
   text-decoration: line-through;
   opacity: 0.3;
 }
+
 
 .buttonWraper {
   position: absolute;
@@ -72,6 +76,10 @@ $task-wrapper-font-size: 22px;
 	cursor: pointer;
 	border: none;
 	color: rgb(255, 255, 255);
+}
+
+.taskNumber:hover svg {
+	fill: rgb(0, 255, 137);
 }
 
 .buttonCompleteTask {

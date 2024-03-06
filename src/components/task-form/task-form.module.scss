@@ -25,4 +25,15 @@ $button-create-task-fs: 17px;
 	border: none;
 	background: linear-gradient(120deg, rgb(0, 255, 137),rgb(30, 0, 255));
 	cursor: pointer;
+
+	&:disabled {
+		background: rgb(101, 99, 99);;
+	}
+}
+
+.invalidText {
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }

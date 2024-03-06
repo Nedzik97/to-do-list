@@ -24,7 +24,7 @@ export const TaskList = (): JSX.Element => {
     <>
       {filteredTasks.length > 0 ?
         <TransitionGroup>
-          {filteredTasks.map((task, index) => {
+          {filteredTasks.map(( task ) => {
             return (
               <CSSTransition
                 key={task.id}
@@ -36,12 +36,12 @@ export const TaskList = (): JSX.Element => {
                   exitActive: styles.taskExitActive,
                 }}
               >
-                <TaskItem  task={task} index={index} />
+                <TaskItem  task={task} />
               </CSSTransition >
             )
           })}
         </TransitionGroup>
-			 : 'Not found task'}
+			 : <p className={styles.textNotFound}>Not found task</p>}
     </>
   )
 }

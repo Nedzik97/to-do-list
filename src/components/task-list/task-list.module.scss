@@ -1,3 +1,5 @@
+$text-font-size: 30px;
+
 .taskEnter {
 	opacity: 0;
 	transform: translateX(-100px);
@@ -20,4 +22,12 @@
 	opacity: 0;
 	transition-property: transform, opacity;
 	transition-duration: 800ms;
+}
+
+.textNotFound {
+	position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+	font-size: $text-font-size;
 }

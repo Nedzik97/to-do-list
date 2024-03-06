@@ -6,5 +6,5 @@ export type  Task = {
 
 export type TaskList = {
   taskList: Task[]
-  filteredList: string
+  filter: string
 }
