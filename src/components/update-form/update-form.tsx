@@ -1,6 +1,6 @@
-import { useState } from 'react'
+import { useState, JSX } from 'react'
 import { useDispatch } from 'react-redux'
-import { editTaskTitle } from '../../store/tasks/tasksSlice'
+import { editTaskTitle } from '../../store/tasks/tasks-slice'
 
 import styles from './update-form.module.scss'
 
@@ -9,12 +9,13 @@ type UpdateFormProps = {
   setIsEditTask: (isEditTask: boolean) => void
 }
 
-export const UpdateForm = ({ id, setIsEditTask}: UpdateFormProps): JSX.Element => {
+export const UpdateForm = ({ id, setIsEditTask }
+:UpdateFormProps): JSX.Element => {
   const [updateForm, setUpdateForm] = useState('')
   const dispatch = useDispatch()
 
-  const updateTask = (id: string, updateForm: string): void => {
-    dispatch(editTaskTitle({ id, newTitle: updateForm }))
+  const updateTask = (taskId: string, newTaskTitle: string): void => {
+    dispatch(editTaskTitle({ 'id': taskId, 'newTitle': newTaskTitle }))
     setUpdateForm('')
     setIsEditTask(false)
   }
@@ -24,15 +25,17 @@ export const UpdateForm = ({ id, setIsEditTask}: UpdateFormProps): JSX.Element =
       <div className={styles.editInputWrapper}>
         <input
           value={updateForm}
-          onChange={(e): void => setUpdateForm(e.target.value)}
+          onChange={(event): void => setUpdateForm(event.target.value)}
           className={styles.editInput}
         />
       </div>
       <div className={styles.editButtonWrapper}>
-        <button onClick={(): void => updateTask(id, updateForm)} className={styles.buttonUpdateTask}>
+        <button onClick={(): void => updateTask(id, updateForm)}
+          className={styles.buttonUpdateTask}>
           Update
         </button>
-        <button onClick={(): void => setIsEditTask(false)} className={styles.buttonUndoEdit}>
+        <button onClick={(): void => setIsEditTask(false)}
+          className={styles.buttonUndoEdit}>
           Cancel
         </button>
       </div>
@@ -40,4 +43,3 @@ export const UpdateForm = ({ id, setIsEditTask}: UpdateFormProps): JSX.Element =
     </div>
   )
 }
-

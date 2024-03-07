@@ -1,3 +1,3 @@
-import type  store  from "../store/index"
+import type store from '../store/index'
 
 export type State = ReturnType <typeof store.getState>

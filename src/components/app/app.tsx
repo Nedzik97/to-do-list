@@ -1,3 +1,4 @@
+import { JSX } from 'react'
 import { TaskForm } from '../task-form/task-form'
 import { TaskList } from '../task-list/task-list'
 import { FilterButtons } from '../task-filter/task-filters'
@@ -13,7 +14,7 @@ export const App = (): JSX.Element => {
     <div className={styles.App}>
       <h1 className={styles.pageTitle}>To Do list</h1>
       <TaskForm />
-      {taskList.length !== 0 && <FilterButtons /> }
+      {taskList.length > 0 && <FilterButtons /> }
       <TaskList/>
     </div>
   )

@@ -1,10 +1,11 @@
-import { useSelector} from 'react-redux'
+import { JSX } from 'react'
+import { useSelector } from 'react-redux'
 import { CSSTransition, TransitionGroup } from 'react-transition-group'
-import { getTasksList, getFilteredList} from '../../store/tasks/selectors'
+import { getTasksList, getFilteredList } from '../../store/tasks/selectors'
 import { filters } from '../../utils'
 import { TaskItem } from '../task/task'
 
-import styles from "./task-list.module.scss"
+import styles from './task-list.module.scss'
 
 export const TaskList = (): JSX.Element => {
   const taskList = useSelector(getTasksList)
@@ -22,26 +23,25 @@ export const TaskList = (): JSX.Element => {
 
   return (
     <>
-      {filteredTasks.length > 0 ?
-        <TransitionGroup>
-          {filteredTasks.map(( task ) => {
-            return (
-              <CSSTransition
-                key={task.id}
-                timeout={800}
-                classNames={{
-                  enter: styles.taskEnter,
-                  enterActive: styles.taskEnterActive,
-                  exit: styles.taskExit,
-                  exitActive: styles.taskExitActive,
-                }}
-              >
-                <TaskItem  task={task} />
-              </CSSTransition >
-            )
-          })}
-        </TransitionGroup>
-			 : <p className={styles.textNotFound}>Not found task</p>}
+      {filteredTasks.length > 0 ? <TransitionGroup>
+        {filteredTasks.map((task) => {
+          return (
+            <CSSTransition
+              key={task.id}
+              timeout={800}
+              classNames={{
+                'enter': styles.taskEnter,
+                'enterActive': styles.taskEnterActive,
+                'exit': styles.taskExit,
+                'exitActive': styles.taskExitActive,
+              }}
+            >
+              <TaskItem task={task} />
+            </CSSTransition >
+          )
+        })}
+      </TransitionGroup> : <p className={styles.textNotFound}>Not found task</p>
+      }
     </>
   )
 }

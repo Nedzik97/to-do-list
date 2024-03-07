@@ -1,6 +1,14 @@
 {
   "extends": [
-    "@wemake-services/typescript/recommended"
-  ]
+    "@wemake-services/typescript/recommended",
+		"@wemake-services/javascript"
+  ],
+	"overrides": [{
+    "files": ["*.tsx"],
+    	"rules": {
+			// linter does not see global dom types if that rule is on 
+     	"no-undef": "off" 
+   	 }
+  }]
 }
 

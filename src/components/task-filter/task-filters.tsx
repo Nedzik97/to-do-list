@@ -1,7 +1,8 @@
-import { useDispatch , useSelector } from 'react-redux'
-import { setFilteredList } from '../../store/tasks/tasksSlice'
+import { JSX } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
+import { setFilteredList } from '../../store/tasks/tasks-slice'
 
-import { getFilteredList, getTasksList} from '../../store/tasks/selectors'
+import { getFilteredList, getTasksList } from '../../store/tasks/selectors'
 import { filters } from '../../utils'
 
 import styles from './task-filter.module.scss'
@@ -17,12 +18,15 @@ export const FilterButtons = (): JSX.Element => {
 
   const countTasks = (type: string): number => {
     switch (type) {
-      case filters.completed:
-        return taskList.filter(task => task.isComplete).length
-      case filters.active:
-        return taskList.filter(task => !task.isComplete).length
-      default:
+      case filters.completed: {
+        return taskList.filter((task) => task.isComplete).length
+      }
+      case filters.active: {
+        return taskList.filter((task) => !task.isComplete).length
+      }
+      default: {
         return filteredTasks.length
+      }
     }
   }
 
