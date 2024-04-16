@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/Nedzik97/to-do-list.git/static/css/main.b82e03e8.css",
+    "main.js": "/Nedzik97/to-do-list.git/static/js/main.85a3e1a4.js",
+    "index.html": "/Nedzik97/to-do-list.git/index.html",
+    "static/media/checkmark.svg": "/Nedzik97/to-do-list.git/static/media/checkmark.4cd1be74862343508bbda393f3f564ff.svg",
+    "main.b82e03e8.css.map": "/Nedzik97/to-do-list.git/static/css/main.b82e03e8.css.map",
+    "main.85a3e1a4.js.map": "/Nedzik97/to-do-list.git/static/js/main.85a3e1a4.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.b82e03e8.css",
+    "static/js/main.85a3e1a4.js"
+  ]
+}
